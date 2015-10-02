@@ -59,10 +59,15 @@ void AUnrealTest2Character::SetupPlayerInputComponent(class UInputComponent* Inp
 	InputComponent->BindAction("Jump", IE_Pressed, this, &ACharacter::Jump);
 	InputComponent->BindAction("Jump", IE_Released, this, &ACharacter::StopJumping);
 	
+	this->GetCharacterMovement()->JumpZVelocity = 800;
+	this->GetCharacterMovement()->AirControl = 0.5;
+
 	//InputComponent->BindTouch(EInputEvent::IE_Pressed, this, &AUnrealTest2Character::TouchStarted);
 	if( EnableTouchscreenMovement(InputComponent) == false )
 	{
-		InputComponent->BindAction("Fire", IE_Pressed, this, &AUnrealTest2Character::OnFire);
+		//InputComponent->BindAction("Fire", IE_Released, this, &Character::)
+		InputComponent->BindAction("Fire", IE_Pressed, this, &AUnrealTest2Character::OnFire_Pressed);
+		InputComponent->BindAction("Fire", IE_Released, this, &AUnrealTest2Character::OnFire_Release);
 	}
 	
 	InputComponent->BindAxis("MoveForward", this, &AUnrealTest2Character::MoveForward);
@@ -75,6 +80,19 @@ void AUnrealTest2Character::SetupPlayerInputComponent(class UInputComponent* Inp
 	InputComponent->BindAxis("TurnRate", this, &AUnrealTest2Character::TurnAtRate);
 	InputComponent->BindAxis("LookUp", this, &APawn::AddControllerPitchInput);
 	InputComponent->BindAxis("LookUpRate", this, &AUnrealTest2Character::LookUpAtRate);
+}
+
+FTimerHandle fireTimer;
+void AUnrealTest2Character::OnFire_Pressed()
+{
+	this->OnFire();
+	this->GetWorldTimerManager().SetTimer(fireTimer, this, &AUnrealTest2Character::OnFire_Pressed, 0.10f, false);
+	//FTimerManager::SetTimer(&fireTimer, this, OnFire_Pressed, 1, false, 0);
+}
+
+void AUnrealTest2Character::OnFire_Release()
+{
+	this->GetWorldTimerManager().ClearTimer(fireTimer);
 }
 
 void AUnrealTest2Character::OnFire()

@@ -51,6 +51,8 @@ public:
 protected:
 	
 	/** Fires a projectile. */
+	void OnFire_Pressed();
+	void OnFire_Release();
 	void OnFire();
 
 	/** Handles moving forward/backward */
