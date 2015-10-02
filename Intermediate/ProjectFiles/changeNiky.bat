@@ -2,6 +2,7 @@
 setlocal
 
 call :FindReplace "D:\Programme\Epic Games" "D:\Program Files\Epic Games\Epic Games" UnrealTest2.vcxproj
+call :FindReplace "D:\Programme\Epic Games" "D:\Program Files\Epic Games\Epic Games" UE4.vcxproj
 
 exit /b 
 

@@ -9,5 +9,6 @@ Intermediate/CachedAssetRegistry.bin
 Saved
 *.opensdf
 *.sdf
+*.sln
 *.suo
 *.xcodeproj
