@@ -89,7 +89,7 @@ FTimerHandle fireTimer;
 void AUnrealTest2Character::Fire()
 {
 	this->OnFire();
-	this->GetWorldTimerManager().SetTimer(fireTimer, this, &AUnrealTest2Character::Fire, 0.10f, false);
+	this->GetWorldTimerManager().SetTimer(fireTimer, this, &AUnrealTest2Character::Fire, 0.05f, false);
 	//FTimerManager::SetTimer(&fireTimer, this, OnFire_Pressed, 1, false, 0);
 }
 
