@@ -10,7 +10,7 @@ class UNREALTEST2_API AMyActorCube : public AActor
 {
 	GENERATED_BODY()
 
-	UPROPERTY(VisibleDefaultsOnly, Category = Projectile)
+	UPROPERTY(EditAnywhere, Category = "Visible Setting")
 	class UBoxComponent* Box;
 	
 public:	
