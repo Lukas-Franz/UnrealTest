@@ -10,8 +10,6 @@ class UNREALTEST2_API AMyActorCube : public AActor
 {
 	GENERATED_BODY()
 
-	UPROPERTY(EditAnywhere, Category = "Visible Setting")
-	class UBoxComponent* Box;
 	
 public:	
 	// Sets default values for this actor's properties
@@ -22,5 +20,7 @@ public:
 	
 	// Called every frame
 	virtual void Tick( float DeltaSeconds ) override;
-	
+
+	UPROPERTY(EditAnywhere, Category = "Visible Setting")
+	class UBoxComponent* Box;
 };
