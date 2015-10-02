@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ItemGroup>
+		<None Include="..\..\UnrealTest2.uproject" />
+		<Filter Include="Source">
+			<UniqueIdentifier>{CD602A3E-F0A6-4883-B80E-96561866D154}</UniqueIdentifier>
+		</Filter>
+		<None Include="..\..\Source\UnrealTest2.Target.cs">
+			<Filter>Source</Filter>
+		</None >
+		<None Include="..\..\Source\UnrealTest2Editor.Target.cs">
+			<Filter>Source</Filter>
+		</None >
+		<Filter Include="Config">
+			<UniqueIdentifier>{1950CBD3-AFFF-4AE7-AD76-4C920C751AB5}</UniqueIdentifier>
+		</Filter>
+		<None Include="..\..\Config\DefaultEditor.ini">
+			<Filter>Config</Filter>
+		</None >
+		<None Include="..\..\Config\DefaultEditorPerProjectUserSettings.ini">
+			<Filter>Config</Filter>
+		</None >
+		<None Include="..\..\Config\DefaultEngine.ini">
+			<Filter>Config</Filter>
+		</None >
+		<None Include="..\..\Config\DefaultGame.ini">
+			<Filter>Config</Filter>
+		</None >
+		<None Include="..\..\Config\DefaultInput.ini">
+			<Filter>Config</Filter>
+		</None >
+		<Filter Include="Source\UnrealTest2">
+			<UniqueIdentifier>{9E54ACAE-32C9-4E2A-A099-FB99687A7D1E}</UniqueIdentifier>
+		</Filter>
+		<None Include="..\..\Source\UnrealTest2\UnrealTest2.Build.cs">
+			<Filter>Source\UnrealTest2</Filter>
+		</None >
+		<ClCompile Include="..\..\Source\UnrealTest2\UnrealTest2.cpp">
+			<Filter>Source\UnrealTest2</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\UnrealTest2\UnrealTest2.h">
+			<Filter>Source\UnrealTest2</Filter>
+		</ClInclude >
+		<ClCompile Include="..\..\Source\UnrealTest2\UnrealTest2Character.cpp">
+			<Filter>Source\UnrealTest2</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\UnrealTest2\UnrealTest2Character.h">
+			<Filter>Source\UnrealTest2</Filter>
+		</ClInclude >
+		<ClCompile Include="..\..\Source\UnrealTest2\UnrealTest2GameMode.cpp">
+			<Filter>Source\UnrealTest2</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\UnrealTest2\UnrealTest2GameMode.h">
+			<Filter>Source\UnrealTest2</Filter>
+		</ClInclude >
+		<ClCompile Include="..\..\Source\UnrealTest2\UnrealTest2HUD.cpp">
+			<Filter>Source\UnrealTest2</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\UnrealTest2\UnrealTest2HUD.h">
+			<Filter>Source\UnrealTest2</Filter>
+		</ClInclude >
+		<ClCompile Include="..\..\Source\UnrealTest2\UnrealTest2Projectile.cpp">
+			<Filter>Source\UnrealTest2</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\UnrealTest2\UnrealTest2Projectile.h">
+			<Filter>Source\UnrealTest2</Filter>
+		</ClInclude >
+	</ItemGroup>
+</Project>

@@ -1,6 +1,11 @@
 Binaries
 DerivedDataCache
-Intermediate
+Intermediate/Build
+Intermediate/Config
+Intermediate/ReimportCache
+Intermediate/Shaders
+Intermediate/Staging
+Intermediate/CachedAssetRegistry.bin
 Saved
 *.opensdf
 *.sdf
