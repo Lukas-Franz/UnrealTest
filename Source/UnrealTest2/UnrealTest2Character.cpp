@@ -59,6 +59,9 @@ void AUnrealTest2Character::SetupPlayerInputComponent(class UInputComponent* Inp
 	InputComponent->BindAction("Jump", IE_Pressed, this, &ACharacter::Jump);
 	InputComponent->BindAction("Jump", IE_Released, this, &ACharacter::StopJumping);
 	
+	InputComponent->BindAction("Run", IE_Pressed, this, &AUnrealTest2Character::Run);
+	InputComponent->BindAction("Run", IE_Released, this, &AUnrealTest2Character::StopRunning);
+
 	this->GetCharacterMovement()->JumpZVelocity = 800;
 	this->GetCharacterMovement()->AirControl = 0.5;
 
@@ -66,8 +69,8 @@ void AUnrealTest2Character::SetupPlayerInputComponent(class UInputComponent* Inp
 	if( EnableTouchscreenMovement(InputComponent) == false )
 	{
 		//InputComponent->BindAction("Fire", IE_Released, this, &Character::)
-		InputComponent->BindAction("Fire", IE_Pressed, this, &AUnrealTest2Character::OnFire_Pressed);
-		InputComponent->BindAction("Fire", IE_Released, this, &AUnrealTest2Character::OnFire_Release);
+		InputComponent->BindAction("Fire", IE_Pressed, this, &AUnrealTest2Character::Fire);
+		InputComponent->BindAction("Fire", IE_Released, this, &AUnrealTest2Character::StopFireing);
 	}
 	
 	InputComponent->BindAxis("MoveForward", this, &AUnrealTest2Character::MoveForward);
@@ -83,14 +86,14 @@ void AUnrealTest2Character::SetupPlayerInputComponent(class UInputComponent* Inp
 }
 
 FTimerHandle fireTimer;
-void AUnrealTest2Character::OnFire_Pressed()
+void AUnrealTest2Character::Fire()
 {
 	this->OnFire();
-	this->GetWorldTimerManager().SetTimer(fireTimer, this, &AUnrealTest2Character::OnFire_Pressed, 0.10f, false);
+	this->GetWorldTimerManager().SetTimer(fireTimer, this, &AUnrealTest2Character::Fire, 0.10f, false);
 	//FTimerManager::SetTimer(&fireTimer, this, OnFire_Pressed, 1, false, 0);
 }
 
-void AUnrealTest2Character::OnFire_Release()
+void AUnrealTest2Character::StopFireing()
 {
 	this->GetWorldTimerManager().ClearTimer(fireTimer);
 }
@@ -129,6 +132,16 @@ void AUnrealTest2Character::OnFire()
 		}
 	}
 
+}
+
+void AUnrealTest2Character::Run()
+{
+	this->GetCharacterMovement()->MaxWalkSpeed = 2048;
+}
+
+void AUnrealTest2Character::StopRunning()
+{
+	this->GetCharacterMovement()->MaxWalkSpeed = 600;
 }
 
 void AUnrealTest2Character::BeginTouch(const ETouchIndex::Type FingerIndex, const FVector Location)

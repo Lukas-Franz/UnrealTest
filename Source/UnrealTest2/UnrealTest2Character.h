@@ -51,9 +51,13 @@ public:
 protected:
 	
 	/** Fires a projectile. */
-	void OnFire_Pressed();
-	void OnFire_Release();
+	void Fire();
+	void StopFireing();
 	void OnFire();
+
+	/** Allows the player to run */
+	void Run();
+	void StopRunning();
 
 	/** Handles moving forward/backward */
 	void MoveForward(float Val);
